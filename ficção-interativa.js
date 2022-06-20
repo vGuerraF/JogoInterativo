@@ -1,5 +1,6 @@
 const prompt = require(`prompt-sync`)();
 console.clear();
+
 function jogo() {
   let equipe = [];
   let deposito = [];
@@ -18,7 +19,6 @@ function jogo() {
     `Você entrou na floresta de Pallet...`,
     `Você entrou na floresta de Pewter...`,
     `Você entrou na caverna de Cerulean...`,
-    `Você entrou no bosque de Celadon...`,
     `Você entrou na floresta de Fuchsia...`,
     `Você entrou nos arredores de Saffrom...`,
     `Você entrou na ilha de Seafoam...`,
@@ -28,7 +28,6 @@ function jogo() {
     `Você chegou na cidade de Pewter.`,
     `Você chegou na cidade de Cerulean.`,
     `Você chegou na cidade de Vermilion.`,
-    `Você chegou na cidade de Fuchsia.`,
     `Você chegou na cidade de Saffron.`,
     `Você chegou na cidade de Seafoam.`,
     `Você chegou na cidade de Viridian.`,
@@ -63,7 +62,7 @@ function jogo() {
     let squirtle = new pokemon(`squirtle`, 44, 1, 13, 44, 43, [wartortle, ``]);
     let charizard = new pokemon(`charizard`, 78, 41, 20, 78, 100, []);
     let charmeleon = new pokemon(`charmeleon`, 58, 16, 16, 58, 80, [charizard,``,``,]);
-    let charmander = new pokemon(`charmander`, 39, 1, 13, 39, 65, [charmeleon,``,]);
+    let charmander = new pokemon(`charmander`, 39, 1, 13, 39, 65, [charmeleon,``]);
     let pidgeot = new pokemon(`pidgeot`, 83, 41, 11, 83, 96, []);
     let pidgeotto = new pokemon(`pidgeotto`, 63, 16, 9, 63, 71, [pidgeot,``,``,]);
     let pidgey = new pokemon(`pidgey`, 40, 1, 7, 40, 56, [pidgeotto, ``]);
@@ -222,7 +221,7 @@ function jogo() {
     }
 
     if (escolha == `1`) {
-      equipe.push(charmander);
+      equipe.push(charizard, venusaur, blastoise, snorlax);
     } else if (escolha == `2`) {
       equipe.push(bulbasaur);
     } else {
@@ -338,10 +337,6 @@ function jogo() {
     let voltorbLt = new pokemon(`voltorb`, 40, 1, 8, 40, 100);
     let raichuLt = new pokemon(`raichu`, 60, 31, 15, 60, 105);
     let pikachuLt = new pokemon(`pikachu`, 35, 1, 10, 35, 90);
-    let weezingKoga = new pokemon(`weezing`, 65, 31, 15, 65, 60);
-    let koffingKoga = new pokemon(`koffing`, 40, 1, 10, 40, 35);
-    let mukKoga = new pokemon(`muk`, 105, 31, 8, 105, 50);
-    let grimerKoga = new pokemon(`grimer`, 80, 1, 6, 80, 25);
     let alakazamSabr = new pokemon(`alakazam`, 55, 41, 15, 55, 120);
     let kadabraSabr = new pokemon(`kadabra`, 40, 16, 12, 40, 105);
     let venomothSabr = new pokemon(`venomoth`, 70, 31, 15, 70, 90);
@@ -360,11 +355,10 @@ function jogo() {
     let pkmBrook = [geodudeBrook, onixBrook];
     let pkmMisty = [starmieMisty, staryuMisty];
     let pkmLt = [voltorbLt, pikachuLt, raichuLt];
-    let pkmKoga = [weezingKoga, koffingKoga, mukKoga, grimerKoga];
     let pkmSabr = [alakazamSabr, kadabraSabr, venomothSabr, mrMimeSabr];
     let pkmBlai = [arcanineBlai, growlitheBlai, rapidashBlai, ponytaBlai];
     let pkmGio = [dugtrioGio, rhydonGio, rhyhornGio, nidokingGio, nidoqueenGio];
-    pkmGyms.push(pkmBrook, pkmMisty, pkmLt, pkmKoga, pkmSabr, pkmBlai, pkmGio);
+    pkmGyms.push(pkmBrook, pkmMisty, pkmLt, pkmSabr, pkmBlai, pkmGio);
 
     let ginasios = [
       `Bem vindo ao ginásio de Pewter, eu sou Brook o líder do ginásio...
@@ -376,9 +370,6 @@ Misty joga seu Pokemon...`,
       `Bem vindo ao ginásio de Vermilion, eu sou Lt. Surge o líder do ginásio...
 Para ganhar a insígnia terá que me derrotar!
 Lt. Surge joga seu Pokemon...`,
-      `Bem vindo ao ginásio de Fuchsia, eu sou Koga o líder do ginásio...
-Para ganhar a insígnia terá que me derrotar!
-Koga joga seu Pokemon...`,
       `Bem vindo ao ginásio de Saffron, eu sou Sabrina a líder do ginásio...
 Para ganhar a insígnia terá que me derrotar!
 Sabrina joga seu Pokemon...`,
@@ -415,8 +406,7 @@ Giovanni joga seu Pokemon...`,
         contador == 11 ||
         contador == 14 ||
         contador == 17 ||
-        contador == 20 ||
-        contador == 23
+        contador == 20
       ) {
         cidade(dias);
       }
@@ -747,8 +737,6 @@ Apareceu um ${encontro.pkm} selvagem!
                 contador = 14;
               } else if (contador <= 20) {
                 contador = 17;
-              } else if (contador <= 23) {
-                contador = 20;
               }
               pokSelvagens[dias].push(
                 krabby,
@@ -928,8 +916,6 @@ Apareceu um ${encontro.pkm} selvagem!
                   contador = 14;
                 } else if (contador <= 20) {
                   contador = 17;
-                } else if (contador <= 23) {
-                  contador = 20;
                 }
                 pokSelvagens[dias].push(
                   grimer,
@@ -1263,8 +1249,6 @@ Apareceu um ${encontro.pkm} selvagem!
                 contador = 14;
               } else if (contador <= 20) {
                 contador = 17;
-              } else if (contador <= 23) {
-                contador = 20;
               }
               if (pkmMortos.length > 0) {
                 for (i = 0; i < pkmMortos.length; i++) {
@@ -1364,7 +1348,7 @@ Apareceu um ${encontro.pkm} selvagem!
 
               if (pkmGyms[dias].length == 0) {
                 insignia++;
-                if (contador == 23) {
+                if (contador == 20) {
                   console.log(
                     `PARABÉNS!! Você derrotou o líder de ginásio e ganhou a última insígnia!`
                   );
@@ -1374,21 +1358,18 @@ Apareceu um ${encontro.pkm} selvagem!
                   );
                   prompt("\n...\n");
                   console.clear();
-                  console.log("Usando esse pokemons:");
+                  console.log("Usando esses pokemons:");
                   for (i = 0; i < equipe.length; i++) {
                     console.log(`${i + 1} - ${equipe[i].pkm}`);
                   }
                   console.log(`Seu nome ficará marcado na história.`);
                   prompt("\n...\n");
                   console.clear();
-                  console.log("Quer jogar novamente?");
-                  console.log(`1 - Sim   2 - Nao`);
-                  let reiniciar = prompt();
-                  if (reiniciar == `1`) {
-                    jogo();
-                  } else {
-                    return;
-                  }
+                  console.log(`\nFIM\n`);
+                  console.log(`Aperte ENTER para comçar novamente.`);
+                  prompt("\n...\n");
+                  console.clear();
+                  jogo();
                 } else {
                   console.log(
                     `PARABÉNS!! Você derrotou o líder de ginásio e ganhou uma insígnia!`
@@ -1434,7 +1415,7 @@ Apareceu um ${encontro.pkm} selvagem!
 
             if (pkmGyms[dias].length == 0) {
               insignia++;
-              if (contador == 23) {
+              if (contador == 20) {
                 console.log(
                   `PARABÉNS!! Você derrotou o líder de ginásio e ganhou a última insígnia!`
                 );
@@ -1444,21 +1425,18 @@ Apareceu um ${encontro.pkm} selvagem!
                 );
                 prompt("\n...\n");
                 console.clear();
-                console.log("Usando esse pokemons:");
+                console.log("Usando esses pokemons:");
                 for (i = 0; i < equipe.length; i++) {
                   console.log(`${i + 1} - ${equipe[i].pkm}`);
                 }
                 console.log(`Seu nome ficará marcado na história.`);
-                prompt("\n...\n");
-                console.clear();
-                console.log("Quer jogar novamente?");
-                console.log(`1 - Sim   2 - Nao`);
-                let reiniciar = prompt();
-                if (reiniciar == `1`) {
+                  prompt("\n...\n");
+                  console.clear();
+                  console.log(`\nFIM\n`);
+                  console.log(`Aperte ENTER para comçar novamente.`);
+                  prompt("\n...\n");
+                  console.clear();
                   jogo();
-                } else {
-                  return;
-                }
               } else {
                 console.log(
                   `PARABÉNS!! Você derrotou o líder de ginásio e ganhou uma insígnia!`
@@ -1537,8 +1515,6 @@ Apareceu um ${encontro.pkm} selvagem!
                   contador = 14;
                 } else if (contador <= 20) {
                   contador = 17;
-                } else if (contador <= 23) {
-                  contador = 20;
                 }
                 if (pkmMortos.length > 0) {
                   for (i = 0; i < pkmMortos.length; i++) {
