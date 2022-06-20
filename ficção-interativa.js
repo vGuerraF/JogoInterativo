@@ -428,9 +428,6 @@ Misty joga seu Pokemon...`,
       `Bem vindo ao ginásio de Vermilion, eu sou Lt. Surge o líder do ginásio...
 Para ganhar a insígnia terá que me derrotar!
 Lt. Surge joga seu Pokemon...`,
-      `Bem vindo ao ginásio de Celadon, eu sou Erika a líder do ginásio...
-Para ganhar a insígnia terá que me derrotar!
-Erika joga seu Pokemon...`,
       `Bem vindo ao ginásio de Fuchsia, eu sou Koga o líder do ginásio...
 Para ganhar a insígnia terá que me derrotar!
 Koga joga seu Pokemon...`,
