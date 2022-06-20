@@ -56,44 +56,21 @@ function jogo() {
     }
 
     let venusaur = new pokemon(`venusaur`, 80, 41, 19, 80, 80, []);
-    let ivysaur = new pokemon(`ivysaur`, 60, 16, 15, 60, 60, [
-      venusaur,
-      ``,
-      ``,
-    ]);
+    let ivysaur = new pokemon(`ivysaur`, 60, 16, 15, 60, 60, [venusaur,``,``,]);
     let bulbasaur = new pokemon(`bulbasaur`, 45, 1, 12, 45, 45, [ivysaur, ``]);
     let blastoise = new pokemon(`blastoise`, 79, 41, 20, 79, 78, []);
-    let wartortle = new pokemon(`wartortle`, 59, 16, 16, 59, 58, [
-      blastoise,
-      ``,
-      ``,
-    ]);
+    let wartortle = new pokemon(`wartortle`, 59, 16, 16, 59, 58, [blastoise,``,``,]);
     let squirtle = new pokemon(`squirtle`, 44, 1, 13, 44, 43, [wartortle, ``]);
     let charizard = new pokemon(`charizard`, 78, 41, 20, 78, 100, []);
-    let charmeleon = new pokemon(`charmeleon`, 58, 16, 16, 58, 80, [
-      charizard,
-      ``,
-      ``,
-    ]);
-    let charmander = new pokemon(`charmander`, 39, 1, 13, 39, 65, [
-      charmeleon,
-      ``,
-    ]);
+    let charmeleon = new pokemon(`charmeleon`, 58, 16, 16, 58, 80, [charizard,``,``,]);
+    let charmander = new pokemon(`charmander`, 39, 1, 13, 39, 65, [charmeleon,``,]);
     let pidgeot = new pokemon(`pidgeot`, 83, 41, 11, 83, 96, []);
-    let pidgeotto = new pokemon(`pidgeotto`, 63, 16, 9, 63, 71, [
-      pidgeot,
-      ``,
-      ``,
-    ]);
+    let pidgeotto = new pokemon(`pidgeotto`, 63, 16, 9, 63, 71, [pidgeot,``,``,]);
     let pidgey = new pokemon(`pidgey`, 40, 1, 7, 40, 56, [pidgeotto, ``]);
     let persian = new pokemon(`persian`, 65, 31, 12, 65, 115, []);
     let meowth = new pokemon(`meowth`, 40, 1, 7, 40, 90, [persian]);
     let nidoking = new pokemon(`nidoking`, 81, 41, 13, 81, 85, []);
-    let nidorino = new pokemon(`nidorino`, 61, 16, 7, 61, 65, [
-      nidoking,
-      ``,
-      ``,
-    ]);
+    let nidorino = new pokemon(`nidorino`, 61, 16, 7, 61, 65, [nidoking,``,``,]);
     let nidoranM = new pokemon(`nidoran(M)`, 46, 1, 6, 46, 50, [nidorino, ``]);
     let hitmonlee = new pokemon(`hitmonlee`, 50, 1, 16, 50, 87, []);
     let tauros = new pokemon(`tauros`, 75, 1, 13, 75, 110, []);
@@ -116,39 +93,20 @@ function jogo() {
     let machoke = new pokemon(`machoke`, 80, 16, 7, 80, 45, [machamp, ``, ``]);
     let machop = new pokemon(`machop`, 70, 1, 5, 70, 35, [machoke, ``]);
     let alakazam = new pokemon(`alakazam`, 55, 41, 14, 55, 120, []);
-    let kadabra = new pokemon(`kadabra`, 40, 16, 11, 40, 105, [
-      alakazam,
-      ``,
-      ``,
-    ]);
+    let kadabra = new pokemon(`kadabra`, 40, 16, 11, 40, 105, [alakazam,``,``,]);
     let abra = new pokemon(`abra`, 25, 1, 10, 25, 90, [kadabra, ``]);
     let buterfree = new pokemon(`buterfree`, 60, 41, 14, 60, 70, []);
-    let metapod = new pokemon(`metapod`, 50, 16, 9, 50, 30, [
-      buterfree,
-      ``,
-      ``,
-    ]);
+    let metapod = new pokemon(`metapod`, 50, 16, 9, 50, 30, [buterfree,``,``,]);
     let caterpie = new pokemon(`caterpie`, 45, 1, 5, 45, 45, [metapod, ``]);
     let vileplume = new pokemon(`vileplume`, 75, 41, 13, 75, 50, []);
     let gloom = new pokemon(`gloom`, 60, 16, 11, 60, 40, [vileplume, ``, ``]);
     let oddish = new pokemon(`oddish`, 45, 1, 5, 45, 30, [gloom, ``]);
     let poliwrath = new pokemon(`poliwrath`, 90, 41, 13, 90, 70, []);
-    let poliwhirl = new pokemon(`poliwhirl`, 65, 16, 7, 65, 90, [
-      poliwrath,
-      ``,
-      ``,
-    ]);
+    let poliwhirl = new pokemon(`poliwhirl`, 65, 16, 7, 65, 90, [poliwrath,``,``,]);
     let poliwag = new pokemon(`poliwag`, 40, 1, 6, 40, 90, [poliwhirl, ``]);
     let victreebel = new pokemon(`victreebel`, 80, 41, 12, 80, 70, []);
-    let weepinbell = new pokemon(`weepinbell`, 65, 16, 9, 65, 55, [
-      victreebel,
-      ``,
-      ``,
-    ]);
-    let bellsprout = new pokemon(`bellsprout`, 50, 1, 6, 50, 40, [
-      weepinbell,
-      ``,
-    ]);
+    let weepinbell = new pokemon(`weepinbell`, 65, 16, 9, 65, 55, [victreebel,``,``,]);
+    let bellsprout = new pokemon(`bellsprout`, 50, 1, 6, 50, 40, [weepinbell,``,]);
     let magneton = new pokemon(`magneton`, 50, 31, 16, 50, 70, []);
     let magnemite = new pokemon(`magnemite`, 25, 1, 12, 25, 45, [magneton]);
     let golem = new pokemon(`golem`, 80, 41, 12, 80, 45, []);
@@ -182,11 +140,7 @@ function jogo() {
     let electrode = new pokemon(`electrode`, 60, 31, 13, 60, 140, []);
     let voltorb = new pokemon(`voltorb`, 40, 1, 7, 40, 100, [electrode]);
     let dragonite = new pokemon(`dragonite`, 91, 41, 14, 91, 80, []);
-    let dragonair = new pokemon(`dragonair`, 61, 16, 10, 61, 70, [
-      dragonite,
-      ``,
-      ``,
-    ]);
+    let dragonair = new pokemon(`dragonair`, 61, 16, 10, 61, 70, [dragonite,``,``,]);
     let dratini = new pokemon(`dratini`, 41, 1, 9, 41, 50, [dragonair, ``]);
     let gyarados = new pokemon(`gyarados`, 95, 31, 15, 95, 81, []);
     let magikarp = new pokemon(`magikarp`, 20, 1, 8, 20, 80, [gyarados]);
@@ -220,9 +174,7 @@ function jogo() {
     let kakuna = new pokemon(`kakuna`, 45, 16, 10, 45, 35, [beedrill, ``, ``]);
     let weedle = new pokemon(`weedle`, 40, 1, 5, 40, 50, [kakuna, ``]);
     let wigglytuff = new pokemon(`wigglytuff`, 140, 31, 7, 140, 45, []);
-    let jigglypuff = new pokemon(`jigglypuff`, 115, 1, 3, 115, 20, [
-      wigglytuff,
-    ]);
+    let jigglypuff = new pokemon(`jigglypuff`, 115, 1, 3, 115, 20, [wigglytuff,]);
     let parasect = new pokemon(`parasect`, 60, 31, 14, 60, 30, []);
     let paras = new pokemon(`paras`, 35, 1, 7, 35, 25, [parasect]);
     let aerodactyl = new pokemon(`aerodactyl`, 80, 1, 11, 80, 130, []);
@@ -244,11 +196,7 @@ function jogo() {
     let porygon = new pokemon(`porygon`, 65, 1, 16, 65, 40, []);
     let chansey = new pokemon(`chansey`, 250, 1, 5, 250, 50, []);
     let nidoqueen = new pokemon(`nidoqueen`, 90, 41, 12, 90, 76, []);
-    let nidorina = new pokemon(`nidorina`, 70, 16, 8, 70, 56, [
-      nidoqueen,
-      ``,
-      ``,
-    ]);
+    let nidorina = new pokemon(`nidorina`, 70, 16, 8, 70, 56, [nidoqueen,``,``,]);
     let nidoranF = new pokemon(`nidoran(F)`, 55, 1, 6, 55, 41, [nidorina, ``]);
 
     console.log(
