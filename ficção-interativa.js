@@ -275,7 +275,7 @@ function jogo() {
     }
 
     if (escolha == `1`) {
-      equipe.push(charizard);
+      equipe.push(charmander);
     } else if (escolha == `2`) {
       equipe.push(bulbasaur);
     } else {
