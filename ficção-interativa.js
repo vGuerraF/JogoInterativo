@@ -1182,6 +1182,7 @@ Apareceu um ${encontro.pkm} selvagem!
     function ginasio(dias) {
       randomPokGym(pkmGyms[dias]);
       console.log(ginasios[dias]);
+      prompt("\n...\n");
       batalhaGym(dias);
     }
 
