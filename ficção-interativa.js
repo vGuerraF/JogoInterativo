@@ -11,13 +11,13 @@ function jogo() {
   let escolhas;
   let insignia = 0;
   let pkmMortos = [];
+  let retirado = [];
   let escolhaParty = 1;
 
   let rotas = [
     `Você entrou na floresta de Pallet...`,
     `Você entrou na floresta de Pewter...`,
     `Você entrou na caverna de Cerulean...`,
-    `Você entrou na floresta de Vermilion...`,
     `Você entrou no bosque de Celadon...`,
     `Você entrou na floresta de Fuchsia...`,
     `Você entrou nos arredores de Saffrom...`,
@@ -28,7 +28,6 @@ function jogo() {
     `Você chegou na cidade de Pewter.`,
     `Você chegou na cidade de Cerulean.`,
     `Você chegou na cidade de Vermilion.`,
-    `Você chegou na cidade de Celadon.`,
     `Você chegou na cidade de Fuchsia.`,
     `Você chegou na cidade de Saffron.`,
     `Você chegou na cidade de Seafoam.`,
@@ -275,7 +274,7 @@ function jogo() {
     }
 
     if (escolha == `1`) {
-      equipe.push(charmander);
+      equipe.push(charizard, blastoise, venusaur);
     } else if (escolha == `2`) {
       equipe.push(bulbasaur);
     } else {
@@ -298,6 +297,7 @@ function jogo() {
       bellsprout,
       rattata,
       goldeen,
+      staryu,
     ];
     let pokSelvagens2 = [
       nidoranM,
@@ -308,6 +308,7 @@ function jogo() {
       spearow,
       meowth,
       paras,
+      porygon,
     ];
     let pokSelvagens3 = [
       geodude,
@@ -318,6 +319,7 @@ function jogo() {
       venonat,
       voltorb,
       nidoranF,
+      clefairy,
     ];
     let pokSelvagens4 = [
       ponyta,
@@ -329,6 +331,8 @@ function jogo() {
       jigglypuff,
       seel,
       farfetchD,
+      tangela,
+      aerodactyl,
     ];
     let pokSelvagens5 = [
       tentacool,
@@ -340,6 +344,7 @@ function jogo() {
       eevee,
       omanyte,
       lickitung,
+      dratini,
     ];
     let pokSelvagens6 = [
       magikarp,
@@ -352,6 +357,7 @@ function jogo() {
       kabuto,
       kangaskhan,
       jynx,
+      snorlax,
     ];
     let pokSelvagens7 = [
       electabuzz,
@@ -363,18 +369,10 @@ function jogo() {
       pinsir,
       hitmonchan,
       magmar,
-    ];
-    let pokSelvagens8 = [
-      dratini,
-      staryu,
-      tangela,
       mrMime,
-      snorlax,
-      clefairy,
-      aerodactyl,
       chansey,
-      porygon,
     ];
+
     pokSelvagens.push(
       pokSelvagens1,
       pokSelvagens2,
@@ -382,8 +380,7 @@ function jogo() {
       pokSelvagens4,
       pokSelvagens5,
       pokSelvagens6,
-      pokSelvagens7,
-      pokSelvagens8
+      pokSelvagens7
     );
 
     let geodudeBrook = new pokemon(`geodude`, 40, 1, 10, 40, 20);
@@ -393,9 +390,6 @@ function jogo() {
     let voltorbLt = new pokemon(`voltorb`, 40, 1, 8, 40, 100);
     let raichuLt = new pokemon(`raichu`, 60, 31, 15, 60, 105);
     let pikachuLt = new pokemon(`pikachu`, 35, 1, 10, 35, 90);
-    let victreebelErika = new pokemon(`victreebel`, 80, 41, 13, 80, 70);
-    let tangelaErika = new pokemon(`tangela`, 65, 1, 15, 65, 70);
-    let vileplumeErika = new pokemon(`vileplume`, 75, 41, 15, 75, 50);
     let weezingKoga = new pokemon(`weezing`, 65, 31, 15, 65, 60);
     let koffingKoga = new pokemon(`koffing`, 40, 1, 10, 40, 35);
     let mukKoga = new pokemon(`muk`, 105, 31, 8, 105, 50);
@@ -418,21 +412,11 @@ function jogo() {
     let pkmBrook = [geodudeBrook, onixBrook];
     let pkmMisty = [starmieMisty, staryuMisty];
     let pkmLt = [voltorbLt, pikachuLt, raichuLt];
-    let pkmErika = [victreebelErika, tangelaErika, vileplumeErika];
     let pkmKoga = [weezingKoga, koffingKoga, mukKoga, grimerKoga];
     let pkmSabr = [alakazamSabr, kadabraSabr, venomothSabr, mrMimeSabr];
     let pkmBlai = [arcanineBlai, growlitheBlai, rapidashBlai, ponytaBlai];
     let pkmGio = [dugtrioGio, rhydonGio, rhyhornGio, nidokingGio, nidoqueenGio];
-    pkmGyms.push(
-      pkmBrook,
-      pkmMisty,
-      pkmLt,
-      pkmErika,
-      pkmKoga,
-      pkmSabr,
-      pkmBlai,
-      pkmGio
-    );
+    pkmGyms.push(pkmBrook, pkmMisty, pkmLt, pkmKoga, pkmSabr, pkmBlai, pkmGio);
 
     let ginasios = [
       `Bem vindo ao ginásio de Pewter, eu sou Brook o líder do ginásio...
@@ -481,14 +465,13 @@ Giovanni joga seu Pokemon...`,
       console.clear();
 
       if (
-        contador == 5 ||
-        contador == 10 ||
-        contador == 15 ||
+        contador == 4 ||
+        contador == 8 ||
+        contador == 11 ||
+        contador == 14 ||
+        contador == 17 ||
         contador == 20 ||
-        contador == 25 ||
-        contador == 30 ||
-        contador == 35 ||
-        contador == 40
+        contador == 23
       ) {
         cidade(dias);
       }
@@ -747,6 +730,7 @@ Apareceu um ${encontro.pkm} selvagem!
             equipe[escolhaParty - 1].pkm
           } está sem vida, ele não consegue lutar...\n`
         );
+        prompt("\n...\n");
         batalha(dias);
       }
 
@@ -806,20 +790,20 @@ Apareceu um ${encontro.pkm} selvagem!
                 equipe[4].hp <= 0 &&
                 equipe[5].hp <= 0)
             ) {
-              if (contador <= 5) {
+              if (contador <= 4) {
                 contador = 0;
-              } else if (contador <= 10) {
-                contador = 5;
-              } else if (contador <= 15) {
-                contador = 10;
+              } else if (contador <= 8) {
+                contador = 4;
+              } else if (contador <= 11) {
+                contador = 8;
+              } else if (contador <= 14) {
+                contador = 11;
+              } else if (contador <= 17) {
+                contador = 14;
               } else if (contador <= 20) {
-                contador = 15;
-              } else if (contador <= 25) {
+                contador = 17;
+              } else if (contador <= 23) {
                 contador = 20;
-              } else if (contador <= 30) {
-                contador = 25;
-              } else if (contador <= 35) {
-                contador = 30;
               }
               pokSelvagens[dias].push(
                 krabby,
@@ -987,20 +971,20 @@ Apareceu um ${encontro.pkm} selvagem!
                   equipe[4].hp <= 0 &&
                   equipe[5].hp <= 0)
               ) {
-                if (contador <= 5) {
+                if (contador <= 4) {
                   contador = 0;
-                } else if (contador <= 10) {
-                  contador = 5;
-                } else if (contador <= 15) {
-                  contador = 10;
+                } else if (contador <= 8) {
+                  contador = 4;
+                } else if (contador <= 11) {
+                  contador = 8;
+                } else if (contador <= 14) {
+                  contador = 11;
+                } else if (contador <= 17) {
+                  contador = 14;
                 } else if (contador <= 20) {
-                  contador = 15;
-                } else if (contador <= 25) {
+                  contador = 17;
+                } else if (contador <= 23) {
                   contador = 20;
-                } else if (contador <= 30) {
-                  contador = 25;
-                } else if (contador <= 35) {
-                  contador = 30;
                 }
                 pokSelvagens[dias].push(
                   grimer,
@@ -1172,10 +1156,16 @@ Apareceu um ${encontro.pkm} selvagem!
           escolhaPkm2 = prompt();
         }
 
-        equipe.splice(escolhaPkm2 - 1, 1, deposito[escolhaPkm1 - 1]);
+        retirado = equipe.splice(escolhaPkm2 - 1, 1, deposito[escolhaPkm1 - 1]);
+        deposito.splice(escolhaPkm1 - 1, 1);
         console.log(`Seus Pokemons foram trocados.`);
         prompt("\n...\n");
         console.clear();
+        if (retirado.length > 0) {
+          for (i = 0; i < retirado.length; i++) {
+            deposito.push(retirado[i]);
+          }
+        }
       }
     }
 
@@ -1256,6 +1246,7 @@ Apareceu um ${encontro.pkm} selvagem!
             equipe[escolhaParty - 1].pkm
           } está sem vida, ele não consegue lutar...\n`
         );
+        prompt("\n...\n");
         batalhaGym(dias);
       }
 
@@ -1315,20 +1306,20 @@ Apareceu um ${encontro.pkm} selvagem!
                 equipe[4].hp <= 0 &&
                 equipe[5].hp <= 0)
             ) {
-              if (contador <= 5) {
+              if (contador <= 4) {
                 contador = 0;
-              } else if (contador <= 10) {
-                contador = 5;
-              } else if (contador <= 15) {
-                contador = 10;
+              } else if (contador <= 8) {
+                contador = 4;
+              } else if (contador <= 11) {
+                contador = 8;
+              } else if (contador <= 14) {
+                contador = 11;
+              } else if (contador <= 17) {
+                contador = 14;
               } else if (contador <= 20) {
-                contador = 15;
-              } else if (contador <= 25) {
+                contador = 17;
+              } else if (contador <= 23) {
                 contador = 20;
-              } else if (contador <= 30) {
-                contador = 25;
-              } else if (contador <= 35) {
-                contador = 30;
               }
               if (pkmMortos.length > 0) {
                 for (i = 0; i < pkmMortos.length; i++) {
@@ -1428,7 +1419,7 @@ Apareceu um ${encontro.pkm} selvagem!
 
               if (pkmGyms[dias].length == 0) {
                 insignia++;
-                if (contador == 40) {
+                if (contador == 23) {
                   console.log(
                     `PARABÉNS!! Você derrotou o líder de ginásio e ganhou a última insígnia!`
                   );
@@ -1498,7 +1489,7 @@ Apareceu um ${encontro.pkm} selvagem!
 
             if (pkmGyms[dias].length == 0) {
               insignia++;
-              if (contador == 35) {
+              if (contador == 23) {
                 console.log(
                   `PARABÉNS!! Você derrotou o líder de ginásio e ganhou a última insígnia!`
                 );
@@ -1589,20 +1580,20 @@ Apareceu um ${encontro.pkm} selvagem!
                   equipe[4].hp <= 0 &&
                   equipe[5].hp <= 0)
               ) {
-                if (contador <= 5) {
+                if (contador <= 4) {
                   contador = 0;
-                } else if (contador <= 10) {
-                  contador = 5;
-                } else if (contador <= 15) {
-                  contador = 10;
+                } else if (contador <= 8) {
+                  contador = 4;
+                } else if (contador <= 11) {
+                  contador = 8;
+                } else if (contador <= 14) {
+                  contador = 11;
+                } else if (contador <= 17) {
+                  contador = 14;
                 } else if (contador <= 20) {
-                  contador = 15;
-                } else if (contador <= 25) {
+                  contador = 17;
+                } else if (contador <= 23) {
                   contador = 20;
-                } else if (contador <= 30) {
-                  contador = 25;
-                } else if (contador <= 35) {
-                  contador = 30;
                 }
                 if (pkmMortos.length > 0) {
                   for (i = 0; i < pkmMortos.length; i++) {
@@ -1723,8 +1714,7 @@ Apareceu um ${encontro.pkm} selvagem!
           (dias == 4 && insignia == 5) ||
           (dias == 5 && insignia == 6) ||
           (dias == 6 && insignia == 7) ||
-          (dias == 7 && insignia == 8) ||
-          (dias == 8 && insignia == 9)
+          (dias == 7 && insignia == 8)
         ) {
           console.log(`Você já derrotou o líder de ginásio dessa cidade.`);
           prompt("\n...\n");
@@ -1744,7 +1734,6 @@ Apareceu um ${encontro.pkm} selvagem!
           (dias == 4 && insignia < 5) ||
           (dias == 5 && insignia < 6) ||
           (dias == 6 && insignia < 7) ||
-          (dias == 7 && insignia < 8) ||
           (dias == 7 && insignia < 8)
         ) {
           console.log(
